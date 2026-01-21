@@ -1,4 +1,5 @@
 **Travel Platform Demand, Revenue & Capacity Forecasting**
+
 **Project Overview**
 
 This project analyzes real hotel booking data to forecast travel demand and revenue for a platform-style business and translate forecasts into capacity utilization, cost, and margin insights. The objective is to demonstrate how forecasting can be used not just for prediction, but for planning, budgeting, and decision-making in travel and platform services.
