@@ -1,71 +1,125 @@
-# Travel-demand-Revenue-forecasting
-Project Overview
+**Travel Platform Demand, Revenue & Capacity Forecasting**
+**Project Overview**
 
-This project analyzes real hotel booking data to forecast travel demand and revenue for a platform business and translate forecasts into capacity, cost, and margin insights for planning and budgeting decisions.
+This project analyzes real hotel booking data to forecast travel demand and revenue for a platform-style business and translate forecasts into capacity utilization, cost, and margin insights. The objective is to demonstrate how forecasting can be used not just for prediction, but for planning, budgeting, and decision-making in travel and platform services.
 
-Business Objective
+**Business Objective**
 
 To build a forecasting-driven decision framework that helps a travel platform:
+1) Anticipate seasonal and volatile booking demand
+2) Align pricing and capacity with expected demand
+3) Translate operational forecasts into finance-ready insights such as revenue, margins, and break-even analysis
+4) Evaluate business outcomes under multiple demand scenarios
 
-Anticipate seasonal demand
+**Dataset Description**
 
-Align pricing and capacity
+The analysis uses a real, anonymized hotel booking dataset for studies in revenue management and demand forecasting.
 
-Evaluate revenue and margin sensitivity under uncertainty
+Data Source: Real booking records from two hotels in Portugal:
+One City Hotel
+One Resort Hotel
 
-Dataset
+**Data Characteristics**
 
-The analysis uses real, anonymized hotel booking data released for academic research, containing multi-year booking records from a city hotel and a resort hotel in Portugal. The dataset captures booking demand, pricing (ADR), cancellations, stay duration, and customer origin, making it suitable for demand and revenue forecasting in a travel platform context.
+Booking-level transactional data
+Multi-year time span suitable for time-series analysis
+Captures real-world travel dynamics such as:
+Seasonality
+Cancellations
+Pricing variation
+International demand mix
 
-Demand analyzed at a weekly level, segmented by City vs Resort hotels.
+**Key Variables Used**
 
-Methodology
+Arrival dates and stay duration (weekday and weekend nights)
+Average Daily Rate (ADR)
+Booking cancellation status
+Lead time
+Hotel type (City vs Resort)
+Customer country of origin
 
-Exploratory Analysis
+The country variable represents the origin country of the traveler, reflecting inbound international demand rather than hotel location. Country information is used for diagnostic analysis only, not for forecasting.
 
-Seasonality, volatility, cancellations, and pricing behavior
+**Analytical Scope**
 
-Demand Forecasting
+Unit of Analysis: Weekly aggregation
+Segmented by hotel type: City Hotel, Resort Hotel
 
-Weekly net bookings using seasonal time-series models
+**Core Metrics**
 
-Revenue Modeling
+1)Gross bookings and net (non-cancelled) bookings
+2)Room nights
+3)Revenue proxy derived from ADR and room nights
+4)Capacity utilization (based on clearly stated assumptions)
 
-Demand × ADR scenarios
+**Methodology**
 
-Capacity & Margin Analysis
+**1. Exploratory Data Analysis**
 
-Utilization, break-even, and profitability
+i) Seasonality and trend analysis of bookings
+ii) Cancellation behavior and demand volatility
+iii) Pricing (ADR) behavior across peak and off-peak periods
+iv) Diagnostic analysis of customer origin mix and lead times
 
-Scenario Testing
+**2. Demand Forecasting**
 
-Base, peak demand, and demand shock cases
+i) Weekly demand forecasting using seasonal time-series models
+ii) Separate forecasts for City and Resort hotels
+iii) Emphasis on interpretability and stability rather than model complexity
 
-Finance Translation Layer
+**3. Revenue Modeling**
 
-Operational analytics are performed in dataset currency units.
-An additional finance layer translates results into INR using conservative assumptions to illustrate budgeting, cost, and margin implications.
+i) Revenue derived from forecasted demand and ADR scenarios
+ii) Volume vs price sensitivity analysis
 
-Key Outputs
+**4. Capacity, Cost, and Margin Analysis**
 
-Weekly demand and revenue forecasts
+i) Capacity utilization analysis using transparent assumptions
+ii) Variable and fixed cost modeling
+iii) Contribution margin and break-even analysis
 
-Capacity utilization insights
+**5. Scenario Analysis**
 
-Margin and break-even analysis
+Three business scenarios are evaluated:
+i) Base case forecast
+ii) Peak demand scenario
+iii) Demand shock scenario
 
-Executive-ready dashboard with operational vs finance views
+Each scenario is traced through revenue, utilization, and margin impact.
 
-Tools Used
+**Finance Translation Layer**
 
-Python (pandas, statsmodels)
+Operational analytics are performed in dataset currency units to preserve methodological integrity.
+A separate finance translation layer converts results into INR using conservative, clearly documented assumptions to illustrate:
 
-SQL-style aggregation
+**Budgeting implications**
 
-Tableau
+1) Cost structures
+2) Margin sensitivity
+3) Break-even thresholds
 
-Excel-style financial modeling
+Operational analytics and finance assumptions are intentionally kept separate.
 
-Key Takeaway
+**Dashboard Design**
 
-Forecasting is valuable only when it enables decisions. This project demonstrates how analytics can be translated into finance and operational actions for platform businesses.
+An executive-style dashboard is designed with two distinct views:
+
+1) Operational View:
+Demand, revenue trends, and utilization in dataset currency
+
+2) Finance View (INR):
+Revenue, costs, margins, and scenario impact based on assumptions
+
+This separation mirrors how operational and finance teams consume analytics in real organizations.
+
+**Tools and Technologies**
+
+Python (pandas, numpy, statsmodels)
+SQL-style aggregation logic
+Tableau for executive dashboards
+Spreadsheet-style financial modeling concepts
+
+**Key Takeaway**
+
+Forecasting creates value only when it informs decisions.
+This project demonstrates how demand forecasting can be translated into actionable financial and operational insights for a travel platform operating under seasonality and uncertainty.
