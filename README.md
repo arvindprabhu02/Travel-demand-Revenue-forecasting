@@ -14,7 +14,7 @@ It includes booking dates, stay duration, ADR, cancellations, and lead-time attr
 
 ## Analytical Approach
 1. Exploratory Data Analysis to understand demand patterns, cancellations, seasonality, and booking behavior.
-2. Time-series forecasting using benchmark models and STL-based decomposition to capture local trends and seasonality.
+2. Time-series forecasting using benchmark models to capture local trends and seasonality.
 3. Rolling validation to compare short-term accuracy and justify model selection.
 4. Scenario planning (base, upside, downside) to reflect demand uncertainty.
 5. Financial modeling to translate demand forecasts into utilization, revenue, profit, and break-even insights using transparent cost assumptions.
